@@ -1,15 +1,20 @@
 import { Input } from "@chakra-ui/react";
+import { ChangeEventHandler } from "react";
 
 interface PrimaryInputProps {
     name:string,
     value: string,
-    onChange():void
+    onChange: ChangeEventHandler<HTMLInputElement>
 
 }
 
-Controle
+
 export default function PrimaryInput({name,value,onChange}: PrimaryInputProps){
     return(
-        <Input variant='filled' name={name} value={value} onChange={onChange} placeholder='Filled' />
+        <Input variant='filled'
+         name={name}
+          value={value} 
+          onChange={onChange} 
+          placeholder='Filled' />
     )
 }
