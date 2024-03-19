@@ -42,8 +42,18 @@ function App() {
           Button
         </Button>
       </form>
+<Spacer width="6" maxWidth='6' />
+      <div className="product-details">
+<h2>Assinatura Mensal</h2>
+<Spacer height="4" />
+        <p>Voce ira pagar</p>
+        <span>R$ 250,00</span>
+        <Spacer height="4" />
+        <p>Regras:Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare arcu dui vivamus arcu felis bibendum ut tristique et. Faucibus scelerisque eleifend donec pretium vulputate. Massa tincidunt dui ut ornare lectus sit amet est. Eu scelerisque felis imperdiet proin fermentum leo vel..</p>
+
+      </div>
     </div>
   );
-}
+}1
 
 export default App;
