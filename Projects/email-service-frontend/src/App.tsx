@@ -3,11 +3,19 @@ import { useState } from "react";
 import "./App.css";
 import PrimaryInput from "./components/input/PrimaryInput";
 import { Button, Spacer } from "@chakra-ui/react";
+import { useIdentifyMutation } from "./hooks/useldentifyMutation";
 
 function App() {
+  const {mutate} = useIdentifyMutation();
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [secondName, setSecondeName] = useState("");
+
+
+  const submit = () => { 
+mutate({email, firstName, lastName: secondName})
+
+  }
 
   return (
     <div className="container">
@@ -15,7 +23,7 @@ function App() {
         <div className="name-form-container">
           <PrimaryInput
             value={firstName}
-            onChange={(event) => setEmail(event.target.value)}
+            onChange={(event) => setFirstName(event.target.value)}
             name="firstName"
             label="Nome"
             placeholder="Digite seu nome"
@@ -23,7 +31,7 @@ function App() {
 
           <PrimaryInput
             value={secondName}
-            onChange={(event) => setEmail(event.target.value)}
+            onChange={(event) => setSecondeName(event.target.value)}
             name="secondName"
             label="Sobrenome"
             placeholder="Digite seu sobrenome"
@@ -38,12 +46,13 @@ function App() {
           placeholder="Digite seu E-mail"
         />
         <Spacer height="4" />
-        <Button colorScheme="green" width="100%">
-          Button
+        <Button colorScheme="green" width="100%" onClick={submit}>
+          Enviar
         </Button>
       </form>
 <Spacer width="6" maxWidth='6' />
       <div className="product-details">
+        
 <h2>Assinatura Mensal</h2>
 <Spacer height="4" />
         <p>Voce ira pagar</p>
@@ -54,6 +63,6 @@ function App() {
       </div>
     </div>
   );
-}1
+}
 
 export default App;
